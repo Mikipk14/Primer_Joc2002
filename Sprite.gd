@@ -5,24 +5,36 @@ extends Sprite
 # var a = 2
 # var b = "text"
 
-var velocitat=Vector2(400,200)
-var cont=0
+var velocitat=500
+var direccio=0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position = Vector2(500,300)
-	pass # Replace with function body.
+	position = Vector2(180,120)
+ # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# warning-ignore:unused_argument
 func _process(delta):
-	rotation_degrees+=1
-	$sprite.rotation_degrees+=-1
-	position+=velocitat*delta
-	if position.x >=1024 or position.x<= 0:
-		velocitat.x= velocitat.x*-1
-	if position.y >= 601 or position.y <= 0:
-		velocitat.y = velocitat.y*-1
+	direccio = Vector2.ZERO
+	if Input.is_action_pressed("A dalt"):
+		direccio += Vector2(0, -1)
 		
+	if Input.is_action_pressed("A baix"):
+		direccio+=Vector2(0, 1)
+		
+	if Input.is_action_pressed("Dreta"):
+		direccio+=Vector2(1, 0)
+		
+	if Input.is_action_pressed("Esquerra"):
+		direccio+=Vector2(-1, 0)
+	position+= direccio.normalized()*delta*velocitat
+
+	
+	
+	
+	
+	
 	
 	
 	
