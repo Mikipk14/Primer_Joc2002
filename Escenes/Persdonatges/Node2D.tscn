@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenes/Persdonatges/Personatge.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenes/Persdonatges/ZONA.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ZONA" parent="." groups=["Inici"] instance=ExtResource( 2 )]
+position = Vector2( 127, 4 )
+
+[node name="ZONA2" parent="." groups=["Final"] instance=ExtResource( 2 )]
+position = Vector2( 830, 20 )
+
+[node name="Personatge" parent="." instance=ExtResource( 1 )]
+position = Vector2( 547, 290 )
+
+[connection signal="area_entered" from="Personatge" to="Personatge" method="_on_Personatge_area_entered"]
+[connection signal="area_exited" from="Personatge" to="Personatge" method="_on_Personatge_area_exited"]
