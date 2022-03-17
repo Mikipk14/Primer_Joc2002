@@ -12,7 +12,7 @@ position = Vector2( 127, 4 )
 position = Vector2( 830, 20 )
 
 [node name="Personatge" parent="." instance=ExtResource( 1 )]
-position = Vector2( 547, 290 )
+position = Vector2( 547, 327 )
 
 [connection signal="area_entered" from="Personatge" to="Personatge" method="_on_Personatge_area_entered"]
 [connection signal="area_exited" from="Personatge" to="Personatge" method="_on_Personatge_area_exited"]
