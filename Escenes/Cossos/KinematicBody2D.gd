@@ -14,7 +14,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Esquerra"):
 		velocitat += Vector2.LEFT * velocitat_i
 	if Input.is_action_just_pressed("A dalt") and is_on_floor():
-		velocitat += Vector2.UP * velocitat_i*2
+		velocitat += Vector2.UP * velocitat_i*1.75
 	velocitat = move_and_slide(velocitat, Vector2.UP)
 	anima(velocitat)
 

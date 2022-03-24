@@ -1,0 +1,74 @@
+[gd_scene format=2]
+
+[node name="pinxitos2" type="StaticBody2D"]
+position = Vector2( 977, 427 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, 82 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, 64 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, 46 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D4" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, 28 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D5" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, 10 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D6" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -8 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D7" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -26 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D8" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -44 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D9" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -62 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D10" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -80 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D11" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -98 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D12" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -116 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D13" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -134 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+
+[node name="CollisionShape2D14" type="CollisionPolygon2D" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -190, -152 )
+polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
