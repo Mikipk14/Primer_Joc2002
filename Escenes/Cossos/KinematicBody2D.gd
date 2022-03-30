@@ -5,6 +5,11 @@ var velocitat = Vector2.ZERO
 var A_baix = Vector2.DOWN
 var Gravetat = Vector2.DOWN * 980
 
+var posicio_inicial : Vector2
+
+func _ready():
+	posicio_inicial = position
+
 func _physics_process(delta):
 	velocitat += Gravetat *delta
 	velocitat.x = 0
@@ -36,3 +41,8 @@ func anima(velocitat):
 
 func _on_porta_body_entered(body):
 	get_tree().change_scene("res://Pantalla2.tscn")
+
+
+func _on_Area2D_body_entered(body):
+	position = posicio_inicial
+

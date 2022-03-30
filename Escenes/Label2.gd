@@ -1,10 +1,10 @@
-extends KinematicBody2D
+extends Label
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var velocitat = Vector2(1,0)
+var mostra= false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,9 +13,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += velocitat
-	if position.x == 330:
-		velocitat = Vector2.LEFT 
-	elif position.x == -30:
-		velocitat = Vector2.RIGHT
+	if mostra:
+		percent_visible+= 0.01
 
+
+func _on_Area2D_body_entered(body):
+	mostra = true

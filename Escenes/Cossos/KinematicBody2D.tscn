@@ -6,15 +6,10 @@
 [ext_resource path="res://Pink/alienPink_jump.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 52, 74.5 )
+extents = Vector2( 49, 74.5 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "salta",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "quiet",
@@ -24,12 +19,17 @@ animations = [ {
 "loop": true,
 "name": "corre",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "salta",
+"speed": 5.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 54.5 )
+position = Vector2( 0, 54.5 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

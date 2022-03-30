@@ -1,16 +1,20 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Escenes/Cossos/KinematicBody2D.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terra.tscn" type="PackedScene" id=2]
 [ext_resource path="res://StaticBody2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Escenes/Cossos/KinematicBody2D.gd" type="Script" id=4]
 [ext_resource path="res://Escenes/bloc3.gd" type="Script" id=5]
+[ext_resource path="res://Escenes/Label.gd" type="Script" id=6]
+[ext_resource path="res://Escenes/Label2.gd" type="Script" id=7]
+[ext_resource path="res://grassMid.png" type="Texture" id=8]
+[ext_resource path="res://grassCenter.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 35.6875, 31.25 )
+extents = Vector2( 36.3438, 24.125 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 206.25, 42.75 )
+extents = Vector2( 210.5, 34.375 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 49, 46.25 )
@@ -18,46 +22,109 @@ extents = Vector2( 49, 46.25 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 15.5, 131 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.5, 127 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 6, 74.5 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "grassMid.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [  ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 128, 128 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "grassCenter.png 1"
+1/texture = ExtResource( 9 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 128, 128 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
 [node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 174.0
+margin_top = 109.0
+margin_right = 1083.0
+margin_bottom = 222.0
+text = "Has d'aconseguir arribar al portal, només pots utilitzar les fletxes del teclat, o la \"W\", la \"A\", la \"S\", i la \"D\"."
+percent_visible = 0.0
+script = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 356.0
+margin_top = 87.0
+margin_right = 457.0
+margin_bottom = 126.0
+text = "Compte amb les punxes!"
+percent_visible = 0.0
+script = ExtResource( 7 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 1023.0
+margin_top = -2.0
+margin_right = 1359.0
+margin_bottom = 806.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -430.0
+margin_top = -379.0
+margin_right = 39.0
+margin_bottom = 321.0
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 482, 312 )
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
-visible = false
+current = true
 drag_margin_left = 0.16
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -1 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 30, -7 )
+position = Vector2( 29, -10 )
 
 [node name="bloc1" type="StaticBody2D" parent="."]
 position = Vector2( 30, -7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bloc1"]
-position = Vector2( 220, 409 )
+position = Vector2( 220.656, 416.125 )
 shape = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="bloc1"]
-margin_left = 185.0
-margin_top = 378.0
-margin_right = 256.0
-margin_bottom = 654.0
 
 [node name="bloc2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bloc2"]
-position = Vector2( 9.25, 346 )
+position = Vector2( 13.5, 354.375 )
 shape = SubResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="bloc2"]
-margin_left = -197.0
-margin_top = 304.0
-margin_right = 216.0
-margin_bottom = 645.0
 
 [node name="bloc_mòbil" type="KinematicBody2D" parent="."]
 position = Vector2( 303, -34 )
@@ -72,6 +139,11 @@ margin_left = 273.0
 margin_top = 218.0
 margin_right = 371.0
 margin_bottom = 311.0
+
+[node name="GrassMid" type="Sprite" parent="bloc_mòbil"]
+position = Vector2( 322, 264.5 )
+scale = Vector2( 0.765625, 0.726563 )
+texture = ExtResource( 8 )
 
 [node name="porta" type="Area2D" parent="."]
 rotation = 1.5708
@@ -88,157 +160,499 @@ margin_right = 597.0
 margin_bottom = -760.0
 color = Color( 1, 0, 0, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 1023.0
-margin_top = -2.0
-margin_right = 1359.0
-margin_bottom = 806.0
-
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 766.5, 438 )
+shape = SubResource( 5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 510.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 70, 206 )
+rotation = 1.5708
+scale = Vector2( 0.2655, 0.360342 )
+offset = Vector2( -376.647, -2128.53 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 817.325, 216.461, 781.042, 214.655 )
 
-[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D2" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 492.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 773, 354 )
+rotation = 1.5708
+scale = Vector2( 0.291536, 0.352161 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
 
-[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D3" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 474.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 785.935, 388.3 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -910.41, -149.672 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D4" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D4" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 456.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 392 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D5" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D5" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 438.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 411 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D6" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D6" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 420.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 430 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D7" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D7" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 402.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 449 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D8" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D8" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 384.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 468 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D9" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D9" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 366.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 487 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D10" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D10" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 348.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 507 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D11" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D11" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 330.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 526 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D12" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D12" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 312.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 545 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D13" type="CollisionPolygon2D" parent="Area2D"]
+[node name="Polygon2D13" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 294.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 775, 564 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D14" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1016, 438 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1016, 183 )
+shape = SubResource( 5 )
+
+[node name="Polygon2D15" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 786.2, 276.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1009, 335 )
+rotation = 4.71239
+scale = Vector2( 0.291536, 0.352161 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
 
-[node name="Area2D2" type="Area2D" parent="."]
-rotation = 3.14159
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D16" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -368.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 996, 340 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -910.41, -149.672 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D17" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -386.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 373.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D3" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D18" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -404.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 392.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D4" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D19" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -422.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 411.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D5" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D20" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -440.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 430.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D6" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D21" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -458.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 449.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D7" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D22" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -476.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 468.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D8" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D23" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -494.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 488.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D9" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D24" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -512.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 507.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D10" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D25" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -530.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 526.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D11" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D26" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -548.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007, 545.633 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D12" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D28" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -566.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1007.44, 105.734 )
+rotation = -1.5708
+scale = Vector2( 0.291536, 0.352161 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
 
-[node name="CollisionShape2D13" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D29" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -584.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 995.44, 110.734 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -910.41, -149.672 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[node name="CollisionShape2D14" type="CollisionPolygon2D" parent="Area2D2"]
+[node name="Polygon2D30" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -996.2, -602.4 )
-polygon = PoolVector2Array( -27, 37, -27, 55, -13, 46 )
+position = Vector2( 1006.44, 144.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
 
-[connection signal="input_event" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_input_event"]
-[connection signal="tree_entered" from="KinematicBody2D" to="KinematicBody2D" method="_on_KinematicBody2D_tree_entered"]
+[node name="Polygon2D31" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 163.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D32" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 182.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D33" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 201.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D34" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 220.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D35" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 239.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D36" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 259.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D37" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 278.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D38" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 297.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D39" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1006.44, 316.367 )
+rotation = -1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 48.5001, 191.633 )
+shape = SubResource( 5 )
+
+[node name="Polygon2D40" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -648, -40.3671 )
+rotation = 1.5708
+scale = Vector2( 0.2655, 0.360342 )
+offset = Vector2( -376.647, -2128.53 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 817.325, 216.461, 781.042, 214.655 )
+
+[node name="Polygon2D41" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 55.0002, 107.633 )
+rotation = 1.5708
+scale = Vector2( 0.291536, 0.352161 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
+
+[node name="Polygon2D42" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 67.9346, 141.933 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -910.41, -149.672 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D43" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 145.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D44" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 164.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D45" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 183.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D46" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 202.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D47" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 221.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D48" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 240.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D49" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 260.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D50" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 279.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D51" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 298.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D52" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 57.0001, 317.633 )
+rotation = 1.5708
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D58" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 296 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D59" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 315 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D60" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 334 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D61" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 353 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D62" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 373 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D63" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 392 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D64" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 411 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="Polygon2D65" type="Polygon2D" parent="Area2D"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 667, 430 )
+rotation = 4.71239
+scale = Vector2( 0.264689, 0.40928 )
+offset = Vector2( -852.606, -176.389 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+
+[node name="CollisionShapee2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 677, 375.5 )
+shape = SubResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 7 )
+format = 1
+tile_data = PoolIntArray( 589845, 0, 0, 720894, 1, 0, 720895, 1, 0, 655361, 0, 0, 655363, 0, 0, 655365, 0, 0, 655381, 1, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 851964, 1, 0, 786432, 1, 0, 786433, 1, 0, 786435, 1, 0, 786437, 1, 0, 786439, 0, 0, 786453, 1, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851973, 1, 0, 983036, 1, 0, 983037, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917509, 1, 0, 917511, 1, 0, 917513, 0, 0, 917515, 0, 0, 917517, 0, 0, 917519, 0, 0, 917521, 0, 0, 917523, 0, 0, 917525, 0, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983045, 1, 0, 1114109, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1179644, 1, 0, 1179645, 1, 0, 1179646, 1, 0, 1179647, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114116, 1, 0, 1114130, 1, 0, 1114133, 1, 0, 1245180, 1, 0, 1245181, 1, 0, 1245182, 1, 0, 1245183, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1310719, 1, 0, 1245184, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1310728, 1, 0, 1310733, 1, 0, 1310734, 1, 0, 1310735, 1, 0, 1310736, 1, 0, 1310737, 1, 0, 1310738, 1, 0, 1310739, 1, 0, 1310741, 1, 0, 1310742, 1, 0, 1376264, 1, 0, 1376266, 1, 0, 1376268, 1, 0, 1376271, 1, 0, 1376273, 1, 0, 1376274, 1, 0, 1376275, 1, 0, 1376276, 1, 0, 1376277, 1, 0, 1376278, 1, 0, 1441800, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1441804, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441809, 1, 0, 1441810, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1507336, 1, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 1, 0, 1507340, 1, 0, 1507342, 1, 0, 1507343, 1, 0, 1507345, 1, 0, 1507346, 1, 0, 1507347, 1, 0, 1507349, 1, 0, 1507350, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1572876, 1, 0, 1572878, 1, 0, 1572879, 1, 0, 1572881, 1, 0, 1572882, 1, 0, 1572883, 1, 0, 1572885, 1, 0, 1572886, 1, 0, 1638408, 1, 0, 1638409, 1, 0, 1638411, 1, 0, 1638412, 1, 0, 1638414, 1, 0, 1638415, 1, 0, 1638417, 1, 0, 1638418, 1, 0, 1638419, 1, 0, 1638421, 1, 0, 1638422, 1, 0, 1703944, 1, 0, 1703945, 1, 0, 1703947, 1, 0, 1703948, 1, 0, 1703950, 1, 0, 1703951, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1769480, 1, 0, 1769481, 1, 0, 1769483, 1, 0, 1769484, 1, 0, 1769486, 1, 0, 1769487, 1, 0, 1769489, 1, 0, 1769490, 1, 0, 1769491, 1, 0, 1769492, 1, 0, 1769494, 1, 0, 1835016, 1, 0, 1835017, 1, 0, 1835019, 1, 0, 1835020, 1, 0, 1835022, 1, 0, 1835023, 1, 0, 1835025, 1, 0, 1835026, 1, 0, 1835027, 1, 0, 1835028, 1, 0, 1835029, 1, 0, 1835030, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1966088, 1, 0, 1966089, 1, 0, 1966091, 1, 0, 1966092, 1, 0, 1966093, 1, 0, 1966095, 1, 0, 1966096, 1, 0, 1966098, 1, 0, 1966099, 1, 0, 1966101, 1, 0, 1966102, 1, 0, 2031624, 1, 0, 2031625, 1, 0, 2031626, 1, 0, 2031627, 1, 0, 2031628, 1, 0, 2031629, 1, 0, 2031631, 1, 0, 2031632, 1, 0, 2031634, 1, 0, 2031635, 1, 0, 2031637, 1, 0, 2031638, 1, 0, 2097164, 1, 0, 2097165, 1, 0, 2097167, 1, 0 )
+
 [connection signal="body_entered" from="porta" to="KinematicBody2D" method="_on_porta_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Label" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Label2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="KinematicBody2D" method="_on_Area2D_body_entered"]
