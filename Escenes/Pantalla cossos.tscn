@@ -7,8 +7,8 @@
 [ext_resource path="res://Escenes/bloc3.gd" type="Script" id=5]
 [ext_resource path="res://Escenes/Label.gd" type="Script" id=6]
 [ext_resource path="res://Escenes/Label2.gd" type="Script" id=7]
-[ext_resource path="res://grassMid.png" type="Texture" id=8]
-[ext_resource path="res://grassCenter.png" type="Texture" id=9]
+[ext_resource path="res://Objectes random/grassMid.png" type="Texture" id=8]
+[ext_resource path="res://Objectes random/grassCenter.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.3438, 24.125 )
@@ -17,10 +17,10 @@ extents = Vector2( 36.3438, 24.125 )
 extents = Vector2( 210.5, 34.375 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 49, 46.25 )
+extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 15.5, 131 )
+extents = Vector2( 15.5, 142.499 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6.5, 127 )
@@ -74,7 +74,7 @@ margin_left = 174.0
 margin_top = 109.0
 margin_right = 1083.0
 margin_bottom = 222.0
-text = "Has d'aconseguir arribar al portal, només pots utilitzar les fletxes del teclat, o la \"W\", la \"A\", la \"S\", i la \"D\"."
+text = "Has d'aconseguir arribar al portal vermell, només pots utilitzar les fletxes del teclat, o la \"W\", la \"A\", la \"S\", i la \"D\"."
 percent_visible = 0.0
 script = ExtResource( 6 )
 
@@ -83,24 +83,12 @@ margin_left = 356.0
 margin_top = 87.0
 margin_right = 457.0
 margin_bottom = 126.0
-text = "Compte amb les punxes!"
+text = "Ep! No t'ho he dit, però compte amb les punxes!"
 percent_visible = 0.0
 script = ExtResource( 7 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 1023.0
-margin_top = -2.0
-margin_right = 1359.0
-margin_bottom = 806.0
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_left = -430.0
-margin_top = -379.0
-margin_right = 39.0
-margin_bottom = 321.0
-
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 482, 312 )
+position = Vector2( 508, 319 )
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
@@ -108,10 +96,10 @@ current = true
 drag_margin_left = 0.16
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, -1 )
+position = Vector2( -3, -6 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 29, -10 )
+position = Vector2( 17, -9 )
 
 [node name="bloc1" type="StaticBody2D" parent="."]
 position = Vector2( 30, -7 )
@@ -131,25 +119,19 @@ position = Vector2( 303, -34 )
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bloc_mòbil"]
-position = Vector2( 322, 264.25 )
+position = Vector2( 305, 250 )
 shape = SubResource( 3 )
 
-[node name="ColorRect" type="ColorRect" parent="bloc_mòbil"]
-margin_left = 273.0
-margin_top = 218.0
-margin_right = 371.0
-margin_bottom = 311.0
-
 [node name="GrassMid" type="Sprite" parent="bloc_mòbil"]
-position = Vector2( 322, 264.5 )
-scale = Vector2( 0.765625, 0.726563 )
+position = Vector2( 305.5, 250.5 )
+scale = Vector2( 0.507812, 0.507813 )
 texture = ExtResource( 8 )
 
 [node name="porta" type="Area2D" parent="."]
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porta"]
-position = Vector2( 581, -891 )
+position = Vector2( 581, -879.501 )
 shape = SubResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="porta"]
@@ -157,124 +139,127 @@ anchor_right = 0.422
 margin_left = 566.0
 margin_top = -1023.0
 margin_right = 597.0
-margin_bottom = -760.0
+margin_bottom = -736.0
 color = Color( 1, 0, 0, 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 766.5, 438 )
+visible = false
+position = Vector2( 744.502, 427.631 )
 shape = SubResource( 5 )
 
 [node name="Polygon2D" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 70, 206 )
+position = Vector2( 48, 196 )
 rotation = 1.5708
 scale = Vector2( 0.2655, 0.360342 )
 offset = Vector2( -376.647, -2128.53 )
-polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 817.325, 216.461, 781.042, 214.655 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 817.316, 219.231, 781.042, 214.655 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 773, 354 )
+position = Vector2( 751.002, 343.631 )
 rotation = 1.5708
 scale = Vector2( 0.291536, 0.352161 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 816.142, 218.988, 781.042, 214.655 )
 
 [node name="Polygon2D3" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 785.935, 388.3 )
+position = Vector2( 763.937, 377.931 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -910.41, -149.672 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D4" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 392 )
+position = Vector2( 753.002, 381.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D5" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 411 )
+position = Vector2( 753.002, 400.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D6" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 430 )
+position = Vector2( 753.002, 419.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D7" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 449 )
+position = Vector2( 753.002, 438.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D8" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 468 )
+position = Vector2( 753.002, 457.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D9" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 487 )
+position = Vector2( 753.002, 476.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D10" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 507 )
+position = Vector2( 753.002, 496.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D11" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 526 )
+position = Vector2( 753.002, 515.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D12" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 545 )
+position = Vector2( 753.002, 534.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="Polygon2D13" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 775, 564 )
+position = Vector2( 753.002, 553.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.222, 217.93, 781.042, 214.655 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2( 1016, 438 )
 shape = SubResource( 5 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2( 1016, 183 )
 shape = SubResource( 5 )
 
@@ -284,7 +269,7 @@ position = Vector2( 1009, 335 )
 rotation = 4.71239
 scale = Vector2( 0.291536, 0.352161 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.875, 218.983, 781.042, 214.655 )
 
 [node name="Polygon2D16" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -292,7 +277,7 @@ position = Vector2( 996, 340 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -910.41, -149.672 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 815.96, 218.085, 781.042, 214.655 )
 
 [node name="Polygon2D17" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -300,7 +285,7 @@ position = Vector2( 1007, 373.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D18" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -308,7 +293,7 @@ position = Vector2( 1007, 392.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D19" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -316,7 +301,7 @@ position = Vector2( 1007, 411.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D20" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -324,7 +309,7 @@ position = Vector2( 1007, 430.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D21" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -332,7 +317,7 @@ position = Vector2( 1007, 449.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D22" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -340,7 +325,7 @@ position = Vector2( 1007, 468.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D23" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -348,7 +333,7 @@ position = Vector2( 1007, 488.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D24" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -356,7 +341,7 @@ position = Vector2( 1007, 507.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D25" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -364,7 +349,7 @@ position = Vector2( 1007, 526.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D26" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -372,15 +357,15 @@ position = Vector2( 1007, 545.633 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 817.217, 217.925, 781.042, 214.655 )
 
 [node name="Polygon2D28" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 1007.44, 105.734 )
+position = Vector2( 1009, 105 )
 rotation = -1.5708
 scale = Vector2( 0.291536, 0.352161 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144, 781.042, 214.655 )
+polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 818.305, 218.983, 781.042, 214.655 )
 
 [node name="Polygon2D29" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -388,7 +373,7 @@ position = Vector2( 995.44, 110.734 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -910.41, -149.672 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.954, 219.453, 781.042, 214.655 )
 
 [node name="Polygon2D30" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -396,7 +381,7 @@ position = Vector2( 1006.44, 144.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.293, 781.042, 214.655 )
 
 [node name="Polygon2D31" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -404,7 +389,7 @@ position = Vector2( 1006.44, 163.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.294, 781.042, 214.655 )
 
 [node name="Polygon2D32" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -412,7 +397,7 @@ position = Vector2( 1006.44, 182.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.294, 781.042, 214.655 )
 
 [node name="Polygon2D33" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -420,7 +405,7 @@ position = Vector2( 1006.44, 201.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.293, 781.042, 214.655 )
 
 [node name="Polygon2D34" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -428,7 +413,7 @@ position = Vector2( 1006.44, 220.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.294, 781.042, 214.655 )
 
 [node name="Polygon2D35" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -436,7 +421,7 @@ position = Vector2( 1006.44, 239.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.294, 781.042, 214.655 )
 
 [node name="Polygon2D36" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -444,7 +429,7 @@ position = Vector2( 1006.44, 259.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.293, 781.042, 214.655 )
 
 [node name="Polygon2D37" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -452,7 +437,7 @@ position = Vector2( 1006.44, 278.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.294, 781.042, 214.655 )
 
 [node name="Polygon2D38" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -460,7 +445,7 @@ position = Vector2( 1006.44, 297.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.294, 781.042, 214.655 )
 
 [node name="Polygon2D39" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
@@ -468,15 +453,21 @@ position = Vector2( 1006.44, 316.367 )
 rotation = -1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 816.212, 219.293, 781.042, 214.655 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 48.5001, 191.633 )
+visible = false
+position = Vector2( 39.5017, 192.631 )
 shape = SubResource( 5 )
+
+[node name="CollisionShapee2D5" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( 665, 373.5 )
+shape = SubResource( 6 )
 
 [node name="Polygon2D40" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( -648, -40.3671 )
+position = Vector2( -656.998, -39.3694 )
 rotation = 1.5708
 scale = Vector2( 0.2655, 0.360342 )
 offset = Vector2( -376.647, -2128.53 )
@@ -484,7 +475,7 @@ polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 817.325, 216.461
 
 [node name="Polygon2D41" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 55.0002, 107.633 )
+position = Vector2( 46.0018, 108.631 )
 rotation = 1.5708
 scale = Vector2( 0.291536, 0.352161 )
 offset = Vector2( -852.606, -176.389 )
@@ -492,7 +483,7 @@ polygon = PoolVector2Array( 813.558, 176.389, 852.605, 214.655, 814.874, 216.144
 
 [node name="Polygon2D42" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 67.9346, 141.933 )
+position = Vector2( 58.9362, 142.931 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -910.41, -149.672 )
@@ -500,7 +491,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D43" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 145.633 )
+position = Vector2( 48.0017, 146.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -508,7 +499,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D44" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 164.633 )
+position = Vector2( 48.0017, 165.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -516,7 +507,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D45" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 183.633 )
+position = Vector2( 48.0017, 184.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -524,7 +515,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D46" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 202.633 )
+position = Vector2( 48.0017, 203.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -532,7 +523,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D47" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 221.633 )
+position = Vector2( 48.0017, 222.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -540,7 +531,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D48" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 240.633 )
+position = Vector2( 48.0017, 241.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -548,7 +539,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D49" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 260.633 )
+position = Vector2( 48.0017, 261.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -556,7 +547,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D50" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 279.633 )
+position = Vector2( 48.0017, 280.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -564,7 +555,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D51" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 298.633 )
+position = Vector2( 48.0017, 299.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -572,7 +563,7 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D52" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 57.0001, 317.633 )
+position = Vector2( 48.0017, 318.631 )
 rotation = 1.5708
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
@@ -580,77 +571,73 @@ polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482
 
 [node name="Polygon2D58" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 296 )
+position = Vector2( 655, 294 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D59" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 315 )
+position = Vector2( 655, 313 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D60" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 334 )
+position = Vector2( 655, 332 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D61" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 353 )
+position = Vector2( 655, 351 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D62" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 373 )
+position = Vector2( 655, 371 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D63" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 392 )
+position = Vector2( 655, 390 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D64" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 411 )
+position = Vector2( 655, 409 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 217.926, 781.042, 214.655 )
 
 [node name="Polygon2D65" type="Polygon2D" parent="Area2D"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 667, 430 )
+position = Vector2( 655, 428 )
 rotation = 4.71239
 scale = Vector2( 0.264689, 0.40928 )
 offset = Vector2( -852.606, -176.389 )
-polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 814.825, 215.482, 781.042, 214.655 )
-
-[node name="CollisionShapee2D5" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 677, 375.5 )
-shape = SubResource( 6 )
+polygon = PoolVector2Array( 814.825, 181.276, 852.605, 214.655, 818.603, 217.926, 781.042, 214.655 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
 tile_set = SubResource( 7 )
 format = 1
-tile_data = PoolIntArray( 589845, 0, 0, 720894, 1, 0, 720895, 1, 0, 655361, 0, 0, 655363, 0, 0, 655365, 0, 0, 655381, 1, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 851964, 1, 0, 786432, 1, 0, 786433, 1, 0, 786435, 1, 0, 786437, 1, 0, 786439, 0, 0, 786453, 1, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851973, 1, 0, 983036, 1, 0, 983037, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917509, 1, 0, 917511, 1, 0, 917513, 0, 0, 917515, 0, 0, 917517, 0, 0, 917519, 0, 0, 917521, 0, 0, 917523, 0, 0, 917525, 0, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983045, 1, 0, 1114109, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1179644, 1, 0, 1179645, 1, 0, 1179646, 1, 0, 1179647, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114116, 1, 0, 1114130, 1, 0, 1114133, 1, 0, 1245180, 1, 0, 1245181, 1, 0, 1245182, 1, 0, 1245183, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1310719, 1, 0, 1245184, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1310728, 1, 0, 1310733, 1, 0, 1310734, 1, 0, 1310735, 1, 0, 1310736, 1, 0, 1310737, 1, 0, 1310738, 1, 0, 1310739, 1, 0, 1310741, 1, 0, 1310742, 1, 0, 1376264, 1, 0, 1376266, 1, 0, 1376268, 1, 0, 1376271, 1, 0, 1376273, 1, 0, 1376274, 1, 0, 1376275, 1, 0, 1376276, 1, 0, 1376277, 1, 0, 1376278, 1, 0, 1441800, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1441804, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441809, 1, 0, 1441810, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1507336, 1, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 1, 0, 1507340, 1, 0, 1507342, 1, 0, 1507343, 1, 0, 1507345, 1, 0, 1507346, 1, 0, 1507347, 1, 0, 1507349, 1, 0, 1507350, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1572876, 1, 0, 1572878, 1, 0, 1572879, 1, 0, 1572881, 1, 0, 1572882, 1, 0, 1572883, 1, 0, 1572885, 1, 0, 1572886, 1, 0, 1638408, 1, 0, 1638409, 1, 0, 1638411, 1, 0, 1638412, 1, 0, 1638414, 1, 0, 1638415, 1, 0, 1638417, 1, 0, 1638418, 1, 0, 1638419, 1, 0, 1638421, 1, 0, 1638422, 1, 0, 1703944, 1, 0, 1703945, 1, 0, 1703947, 1, 0, 1703948, 1, 0, 1703950, 1, 0, 1703951, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1769480, 1, 0, 1769481, 1, 0, 1769483, 1, 0, 1769484, 1, 0, 1769486, 1, 0, 1769487, 1, 0, 1769489, 1, 0, 1769490, 1, 0, 1769491, 1, 0, 1769492, 1, 0, 1769494, 1, 0, 1835016, 1, 0, 1835017, 1, 0, 1835019, 1, 0, 1835020, 1, 0, 1835022, 1, 0, 1835023, 1, 0, 1835025, 1, 0, 1835026, 1, 0, 1835027, 1, 0, 1835028, 1, 0, 1835029, 1, 0, 1835030, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1966088, 1, 0, 1966089, 1, 0, 1966091, 1, 0, 1966092, 1, 0, 1966093, 1, 0, 1966095, 1, 0, 1966096, 1, 0, 1966098, 1, 0, 1966099, 1, 0, 1966101, 1, 0, 1966102, 1, 0, 2031624, 1, 0, 2031625, 1, 0, 2031626, 1, 0, 2031627, 1, 0, 2031628, 1, 0, 2031629, 1, 0, 2031631, 1, 0, 2031632, 1, 0, 2031634, 1, 0, 2031635, 1, 0, 2031637, 1, 0, 2031638, 1, 0, 2097164, 1, 0, 2097165, 1, 0, 2097167, 1, 0 )
+tile_data = PoolIntArray( -458763, 1, 0, -458761, 1, 0, -458759, 1, 0, -393229, 1, 0, -393227, 1, 0, -393225, 1, 0, -393223, 1, 0, -393221, 1, 0, -327693, 1, 0, -327691, 1, 0, -327689, 1, 0, -327687, 1, 0, -327685, 1, 0, -327684, 1, 0, -327683, 1, 0, -262157, 1, 0, -262155, 1, 0, -262153, 1, 0, -262151, 1, 0, -262148, 1, 0, -262147, 1, 0, -196622, 1, 0, -196621, 1, 0, -196620, 1, 0, -196619, 1, 0, -196617, 1, 0, -196615, 1, 0, -196613, 1, 0, -196612, 1, 0, -196611, 1, 0, -196609, 1, 0, -131086, 1, 0, -131085, 1, 0, -131084, 1, 0, -131083, 1, 0, -131081, 1, 0, -131080, 1, 0, -131079, 1, 0, -131077, 1, 0, -131076, 1, 0, -131075, 1, 0, -131073, 1, 0, -65550, 1, 0, -65545, 1, 0, -65544, 1, 0, -65540, 1, 0, -65539, 1, 0, -65537, 1, 0, -14, 1, 0, -12, 1, 0, -10, 1, 0, -8, 1, 0, -6, 1, 0, -5, 1, 0, -4, 1, 0, -3, 1, 0, -1, 1, 0, -65494, 1, 0, 65522, 1, 0, 65524, 1, 0, 65526, 1, 0, 65528, 1, 0, 65529, 1, 0, 65531, 1, 0, 65533, 1, 0, 65535, 1, 0, 32, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 37, 1, 0, 39, 1, 0, 40, 1, 0, 42, 1, 0, 131058, 1, 0, 131060, 1, 0, 131062, 1, 0, 131065, 1, 0, 131067, 1, 0, 131069, 1, 0, 65568, 1, 0, 65570, 1, 0, 65573, 1, 0, 65575, 1, 0, 65576, 1, 0, 65578, 1, 0, 196594, 1, 0, 196596, 1, 0, 196598, 1, 0, 196599, 1, 0, 196601, 1, 0, 196603, 1, 0, 196605, 1, 0, 196607, 1, 0, 131104, 1, 0, 131106, 1, 0, 131108, 1, 0, 131109, 1, 0, 131111, 1, 0, 131112, 1, 0, 131113, 1, 0, 262130, 1, 0, 262132, 1, 0, 262134, 1, 0, 262135, 1, 0, 262137, 1, 0, 262139, 1, 0, 262141, 1, 0, 196640, 1, 0, 196642, 1, 0, 196644, 1, 0, 196645, 1, 0, 196647, 1, 0, 196649, 1, 0, 327666, 1, 0, 327668, 1, 0, 327670, 1, 0, 327671, 1, 0, 327673, 1, 0, 327675, 1, 0, 327677, 1, 0, 327679, 1, 0, 262176, 1, 0, 262178, 1, 0, 262180, 1, 0, 262182, 1, 0, 262184, 1, 0, 262185, 1, 0, 393202, 1, 0, 393204, 1, 0, 393206, 1, 0, 393209, 1, 0, 393211, 1, 0, 393213, 1, 0, 327712, 1, 0, 327714, 1, 0, 327716, 1, 0, 327717, 1, 0, 327718, 1, 0, 327720, 1, 0, 327721, 1, 0, 458738, 1, 0, 458740, 1, 0, 458742, 1, 0, 458744, 1, 0, 458745, 1, 0, 458747, 1, 0, 458749, 1, 0, 458751, 1, 0, 393248, 1, 0, 393250, 1, 0, 393252, 1, 0, 393253, 1, 0, 393254, 1, 0, 393256, 1, 0, 393257, 1, 0, 524274, 1, 0, 524276, 1, 0, 524278, 1, 0, 524280, 1, 0, 524285, 1, 0, 458784, 1, 0, 458786, 1, 0, 458788, 1, 0, 458789, 1, 0, 458790, 1, 0, 458792, 1, 0, 458793, 1, 0, 589810, 1, 0, 589812, 1, 0, 589814, 1, 0, 589815, 1, 0, 589816, 1, 0, 589817, 1, 0, 589819, 1, 0, 589821, 1, 0, 589823, 1, 0, 524320, 1, 0, 524322, 1, 0, 524324, 1, 0, 524325, 1, 0, 524326, 1, 0, 524328, 1, 0, 524329, 1, 0, 655346, 1, 0, 655347, 1, 0, 655348, 1, 0, 655349, 1, 0, 655350, 1, 0, 655351, 1, 0, 655352, 1, 0, 655356, 1, 0, 589845, 0, 0, 589856, 1, 0, 589858, 1, 0, 589860, 1, 0, 589861, 1, 0, 589862, 1, 0, 589864, 1, 0, 589865, 1, 0, 720883, 1, 0, 720884, 1, 0, 720885, 1, 0, 720890, 1, 0, 720894, 1, 0, 720895, 1, 0, 655361, 0, 0, 655363, 0, 0, 655365, 0, 0, 655381, 1, 0, 655392, 1, 0, 655394, 1, 0, 655396, 1, 0, 655397, 1, 0, 655398, 1, 0, 655400, 1, 0, 655401, 1, 0, 786418, 1, 0, 786419, 1, 0, 786420, 1, 0, 786421, 1, 0, 786422, 1, 0, 786423, 1, 0, 786425, 1, 0, 786428, 1, 0, 786429, 1, 0, 786430, 1, 0, 786431, 1, 0, 720896, 1, 0, 720928, 1, 0, 720930, 1, 0, 720932, 1, 0, 720933, 1, 0, 720934, 1, 0, 720936, 1, 0, 720937, 1, 0, 851954, 1, 0, 851955, 1, 0, 851956, 1, 0, 851958, 1, 0, 851960, 1, 0, 851962, 1, 0, 851964, 1, 0, 786432, 1, 0, 786433, 1, 0, 786435, 1, 0, 786437, 1, 0, 786439, 0, 0, 786453, 1, 0, 786464, 1, 0, 786466, 1, 0, 786467, 1, 0, 786468, 1, 0, 786469, 1, 0, 786470, 1, 0, 786472, 1, 0, 786473, 1, 0, 917491, 1, 0, 917492, 1, 0, 917494, 1, 0, 917495, 1, 0, 917496, 1, 0, 917497, 1, 0, 917500, 1, 0, 917501, 1, 0, 917502, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851973, 1, 0, 852000, 1, 0, 852002, 1, 0, 852003, 1, 0, 852004, 1, 0, 852005, 1, 0, 852006, 1, 0, 852008, 1, 0, 852009, 1, 0, 983027, 1, 0, 983028, 1, 0, 983029, 1, 0, 983031, 1, 0, 983032, 1, 0, 983033, 1, 0, 983034, 1, 0, 983036, 1, 0, 983037, 1, 0, 983038, 1, 0, 983039, 1, 0, 917504, 1, 0, 917505, 1, 0, 917506, 1, 0, 917507, 1, 0, 917509, 1, 0, 917511, 1, 0, 917513, 0, 0, 917515, 0, 0, 917517, 0, 0, 917519, 0, 0, 917521, 0, 0, 917523, 0, 0, 917525, 0, 0, 917536, 1, 0, 917538, 1, 0, 917539, 1, 0, 917540, 1, 0, 917541, 1, 0, 917542, 1, 0, 917544, 1, 0, 917545, 1, 0, 1048563, 1, 0, 1048564, 1, 0, 1048566, 1, 0, 1048568, 1, 0, 1048569, 1, 0, 1048570, 1, 0, 1048572, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983045, 1, 0, 983072, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 1, 0, 983078, 1, 0, 983080, 1, 0, 1114099, 1, 0, 1114100, 1, 0, 1114101, 1, 0, 1114102, 1, 0, 1114103, 1, 0, 1114105, 1, 0, 1114106, 1, 0, 1114107, 1, 0, 1114108, 1, 0, 1114109, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048608, 1, 0, 1048610, 1, 0, 1048611, 1, 0, 1048612, 1, 0, 1048613, 1, 0, 1048614, 1, 0, 1048616, 1, 0, 1048617, 1, 0, 1179636, 1, 0, 1179637, 1, 0, 1179638, 1, 0, 1179639, 1, 0, 1179640, 1, 0, 1179641, 1, 0, 1179643, 1, 0, 1179644, 1, 0, 1179645, 1, 0, 1179646, 1, 0, 1179647, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114116, 1, 0, 1114130, 1, 0, 1114133, 1, 0, 1114144, 1, 0, 1114146, 1, 0, 1114147, 1, 0, 1114148, 1, 0, 1114149, 1, 0, 1114150, 1, 0, 1114152, 1, 0, 1114153, 1, 0, 1245173, 1, 0, 1245174, 1, 0, 1245175, 1, 0, 1245176, 1, 0, 1245177, 1, 0, 1245178, 1, 0, 1245180, 1, 0, 1245181, 1, 0, 1245182, 1, 0, 1245183, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179672, 1, 0, 1179674, 1, 0, 1179676, 1, 0, 1179678, 1, 0, 1179680, 1, 0, 1179682, 1, 0, 1179683, 1, 0, 1179684, 1, 0, 1179685, 1, 0, 1179686, 1, 0, 1179688, 1, 0, 1179689, 1, 0, 1310709, 1, 0, 1310711, 1, 0, 1310712, 1, 0, 1310713, 1, 0, 1310714, 1, 0, 1310715, 1, 0, 1310716, 1, 0, 1310717, 1, 0, 1310719, 1, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0, 1245216, 1, 0, 1245218, 1, 0, 1245219, 1, 0, 1245220, 1, 0, 1245221, 1, 0, 1245222, 1, 0, 1245224, 1, 0, 1245225, 1, 0, 1376245, 1, 0, 1376248, 1, 0, 1376249, 1, 0, 1376250, 1, 0, 1376251, 1, 0, 1376252, 1, 0, 1376253, 1, 0, 1376254, 1, 0, 1376255, 1, 0, 1310720, 1, 0, 1310721, 1, 0, 1310724, 1, 0, 1310725, 1, 0, 1310728, 1, 0, 1310733, 1, 0, 1310734, 1, 0, 1310735, 1, 0, 1310736, 1, 0, 1310737, 1, 0, 1310738, 1, 0, 1310739, 1, 0, 1310741, 1, 0, 1310742, 1, 0, 1310752, 1, 0, 1310754, 1, 0, 1310755, 1, 0, 1310756, 1, 0, 1310757, 1, 0, 1310758, 1, 0, 1310760, 1, 0, 1310761, 1, 0, 1441782, 1, 0, 1441785, 1, 0, 1441786, 1, 0, 1441787, 1, 0, 1441788, 1, 0, 1441789, 1, 0, 1441790, 1, 0, 1376256, 1, 0, 1376257, 1, 0, 1376258, 1, 0, 1376259, 1, 0, 1376260, 1, 0, 1376261, 1, 0, 1376262, 1, 0, 1376263, 1, 0, 1376264, 1, 0, 1376265, 1, 0, 1376266, 1, 0, 1376268, 1, 0, 1376271, 1, 0, 1376273, 1, 0, 1376274, 1, 0, 1376275, 1, 0, 1376276, 1, 0, 1376277, 1, 0, 1376278, 1, 0, 1376280, 1, 0, 1376281, 1, 0, 1376282, 1, 0, 1376283, 1, 0, 1376284, 1, 0, 1376285, 1, 0, 1376286, 1, 0, 1376288, 1, 0, 1376290, 1, 0, 1376291, 1, 0, 1376292, 1, 0, 1376293, 1, 0, 1376294, 1, 0, 1376296, 1, 0, 1376297, 1, 0, 1507318, 1, 0, 1507319, 1, 0, 1507322, 1, 0, 1507323, 1, 0, 1507324, 1, 0, 1507327, 1, 0, 1441792, 1, 0, 1441793, 1, 0, 1441794, 1, 0, 1441795, 1, 0, 1441796, 1, 0, 1441797, 1, 0, 1441798, 1, 0, 1441800, 1, 0, 1441801, 1, 0, 1441802, 1, 0, 1441803, 1, 0, 1441804, 1, 0, 1441806, 1, 0, 1441807, 1, 0, 1441809, 1, 0, 1441810, 1, 0, 1441813, 1, 0, 1441814, 1, 0, 1441816, 1, 0, 1441824, 1, 0, 1441826, 1, 0, 1441827, 1, 0, 1441829, 1, 0, 1441830, 1, 0, 1441832, 1, 0, 1441833, 1, 0, 1572855, 1, 0, 1572856, 1, 0, 1572859, 1, 0, 1572860, 1, 0, 1572861, 1, 0, 1572862, 1, 0, 1507329, 1, 0, 1507330, 1, 0, 1507331, 1, 0, 1507332, 1, 0, 1507334, 1, 0, 1507335, 1, 0, 1507336, 1, 0, 1507337, 1, 0, 1507338, 1, 0, 1507339, 1, 0, 1507340, 1, 0, 1507342, 1, 0, 1507343, 1, 0, 1507345, 1, 0, 1507346, 1, 0, 1507347, 1, 0, 1507349, 1, 0, 1507350, 1, 0, 1507352, 1, 0, 1507354, 1, 0, 1507355, 1, 0, 1507356, 1, 0, 1507357, 1, 0, 1507358, 1, 0, 1507360, 1, 0, 1507362, 1, 0, 1507363, 1, 0, 1507364, 1, 0, 1507365, 1, 0, 1507366, 1, 0, 1507368, 1, 0, 1638392, 1, 0, 1638393, 1, 0, 1638395, 1, 0, 1638396, 1, 0, 1638397, 1, 0, 1638399, 1, 0, 1572864, 1, 0, 1572865, 1, 0, 1572868, 1, 0, 1572869, 1, 0, 1572870, 1, 0, 1572871, 1, 0, 1572872, 1, 0, 1572873, 1, 0, 1572874, 1, 0, 1572875, 1, 0, 1572876, 1, 0, 1572878, 1, 0, 1572879, 1, 0, 1572881, 1, 0, 1572882, 1, 0, 1572883, 1, 0, 1572885, 1, 0, 1572886, 1, 0, 1572888, 1, 0, 1572889, 1, 0, 1572890, 1, 0, 1572894, 1, 0, 1572896, 1, 0, 1572897, 1, 0, 1572898, 1, 0, 1572899, 1, 0, 1572900, 1, 0, 1572901, 1, 0, 1572902, 1, 0, 1572903, 1, 0, 1572904, 1, 0, 1572905, 1, 0, 1703929, 1, 0, 1703930, 1, 0, 1703932, 1, 0, 1703933, 1, 0, 1703934, 1, 0, 1703935, 1, 0, 1638401, 1, 0, 1638402, 1, 0, 1638404, 1, 0, 1638405, 1, 0, 1638406, 1, 0, 1638408, 1, 0, 1638409, 1, 0, 1638411, 1, 0, 1638412, 1, 0, 1638414, 1, 0, 1638415, 1, 0, 1638417, 1, 0, 1638418, 1, 0, 1638419, 1, 0, 1638421, 1, 0, 1638422, 1, 0, 1638425, 1, 0, 1638426, 1, 0, 1638427, 1, 0, 1638428, 1, 0, 1638429, 1, 0, 1638430, 1, 0, 1638431, 1, 0, 1638432, 1, 0, 1638433, 1, 0, 1769466, 1, 0, 1769467, 1, 0, 1769468, 1, 0, 1769469, 1, 0, 1769470, 1, 0, 1769471, 1, 0, 1703936, 1, 0, 1703938, 1, 0, 1703941, 1, 0, 1703943, 1, 0, 1703944, 1, 0, 1703945, 1, 0, 1703947, 1, 0, 1703948, 1, 0, 1703950, 1, 0, 1703951, 1, 0, 1703953, 1, 0, 1703954, 1, 0, 1703955, 1, 0, 1703956, 1, 0, 1703957, 1, 0, 1703958, 1, 0, 1703960, 1, 0, 1703961, 1, 0, 1703964, 1, 0, 1703965, 1, 0, 1703966, 1, 0, 1703967, 1, 0, 1703970, 1, 0, 1703971, 1, 0, 1703972, 1, 0, 1703973, 1, 0, 1835003, 1, 0, 1835004, 1, 0, 1835005, 1, 0, 1835006, 1, 0, 1835007, 1, 0, 1769473, 1, 0, 1769474, 1, 0, 1769475, 1, 0, 1769476, 1, 0, 1769477, 1, 0, 1769479, 1, 0, 1769480, 1, 0, 1769481, 1, 0, 1769483, 1, 0, 1769484, 1, 0, 1769486, 1, 0, 1769487, 1, 0, 1769489, 1, 0, 1769490, 1, 0, 1769491, 1, 0, 1769492, 1, 0, 1769494, 1, 0, 1769497, 1, 0, 1769498, 1, 0, 1769499, 1, 0, 1769500, 1, 0, 1769501, 1, 0, 1769502, 1, 0, 1769503, 1, 0, 1769504, 1, 0, 1769505, 1, 0, 1769506, 1, 0, 1900540, 1, 0, 1900541, 1, 0, 1900542, 1, 0, 1835008, 1, 0, 1835010, 1, 0, 1835011, 1, 0, 1835012, 1, 0, 1835013, 1, 0, 1835015, 1, 0, 1835016, 1, 0, 1835017, 1, 0, 1835019, 1, 0, 1835020, 1, 0, 1835022, 1, 0, 1835023, 1, 0, 1835025, 1, 0, 1835026, 1, 0, 1835027, 1, 0, 1835028, 1, 0, 1835029, 1, 0, 1835030, 1, 0, 1835032, 1, 0, 1835033, 1, 0, 1835034, 1, 0, 1835035, 1, 0, 1835036, 1, 0, 1835037, 1, 0, 1966078, 1, 0, 1966079, 1, 0, 1900544, 1, 0, 1900545, 1, 0, 1900546, 1, 0, 1900548, 1, 0, 1900549, 1, 0, 1900550, 1, 0, 1900552, 1, 0, 1900553, 1, 0, 1900555, 1, 0, 1900556, 1, 0, 1900558, 1, 0, 1900559, 1, 0, 1900561, 1, 0, 1900562, 1, 0, 1900563, 1, 0, 1900565, 1, 0, 1900566, 1, 0, 1900568, 1, 0, 1900569, 1, 0, 1900570, 1, 0, 1900571, 1, 0, 1966082, 1, 0, 1966083, 1, 0, 1966084, 1, 0, 1966085, 1, 0, 1966086, 1, 0, 1966087, 1, 0, 1966088, 1, 0, 1966089, 1, 0, 1966091, 1, 0, 1966092, 1, 0, 1966093, 1, 0, 1966095, 1, 0, 1966096, 1, 0, 1966098, 1, 0, 1966099, 1, 0, 1966101, 1, 0, 1966102, 1, 0, 1966103, 1, 0, 1966104, 1, 0, 2031624, 1, 0, 2031625, 1, 0, 2031626, 1, 0, 2031627, 1, 0, 2031628, 1, 0, 2031629, 1, 0, 2031631, 1, 0, 2031632, 1, 0, 2031634, 1, 0, 2031635, 1, 0, 2031636, 1, 0, 2031637, 1, 0, 2031638, 1, 0, 2097164, 1, 0, 2097165, 1, 0, 2097167, 1, 0 )
 
 [connection signal="body_entered" from="porta" to="KinematicBody2D" method="_on_porta_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Label" method="_on_Area2D_body_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grassCenter.png-135927ee1bfbcdcf764314cae4dad9ef.stex"
+path="res://.import/wormPink_dead.png-888d10ba847330582c0e5f7729174807.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grassCenter.png"
-dest_files=[ "res://.import/grassCenter.png-135927ee1bfbcdcf764314cae4dad9ef.stex" ]
+source_file="res://Objectes random/wormPink_dead.png"
+dest_files=[ "res://.import/wormPink_dead.png-888d10ba847330582c0e5f7729174807.stex" ]
 
 [params]
 
